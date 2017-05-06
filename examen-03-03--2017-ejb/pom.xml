@@ -10,7 +10,6 @@
 	<packaging>ejb</packaging>
 
 
-
 	<dependencies>
 		<dependency>
 			<groupId>javax</groupId>

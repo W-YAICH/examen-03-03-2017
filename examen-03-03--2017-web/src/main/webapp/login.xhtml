@@ -1,0 +1,21 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	template="/template/template.xhtml">
+	<ui:define name="title">login</ui:define>
+	<ui:define name="content">
+		<h1>login page</h1>
+		<h:form>
+			<h:panelGrid columns="2">
+				<h:outputText value="login" />
+				<h:inputText value="#{loginBean.login}" />
+				<h:outputText value="password" />
+				<h:inputSecret value="#{loginBean.password}" />
+			</h:panelGrid>
+			<h:commandButton action="#{loginBean.doLogin()}" value="login" />
+		</h:form>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,22 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	template="/template/template.xhtml">
+	<ui:define name="title">TEACHER</ui:define>
+	<ui:define name="content">
+		<h1>Espace Teacher</h1>
+		<h:form>
+			<h:dataTable value="#{teacherBean.coursesList}" var="course" border="1">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Courses" />
+					</f:facet>
+					<h:outputText value="#{course.name}" />
+				</h:column>
+			</h:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>

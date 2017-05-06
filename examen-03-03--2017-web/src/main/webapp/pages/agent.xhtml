@@ -1,0 +1,44 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	template="/template/template.xhtml">
+	<ui:define name="title">AGENT</ui:define>
+	<ui:define name="content">
+	<h:form>
+		<h1>Espace Agent</h1>
+		
+		<h2>Course</h2>
+		
+		<h:panelGrid columns="2">
+			<h:outputText value="Course" />
+			<h:inputText value="#{agentBean.cours.name}" />
+		</h:panelGrid>
+			<br/>
+		
+		<h2>Teacher</h2>
+		<h:panelGrid columns="2">
+			<h:outputText value="Login" />
+			<h:inputText value="#{agentBean.teacher.login}" />
+			
+			<h:outputText value="Name" />
+			<h:inputText value="#{agentBean.teacher.name}" />
+			
+			<h:outputText value="Password" />
+			<h:inputText value="#{agentBean.teacher.password}" />
+			
+			<h:outputText value="Age" />
+			<h:inputText value="#{agentBean.teacher.age}" />
+
+			<h:outputText value="date of birth" />
+			<h:inputText value="#{agentBean.teacher.birthDate}" >
+					<f:convertDateTime pattern="dd-MM-yyyy"/>
+			</h:inputText>
+			
+			<h:commandButton action="#{agentBean.ajouterTeacherEtCourse()}" value="Ajouter enseignant et cours" />
+		</h:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>
