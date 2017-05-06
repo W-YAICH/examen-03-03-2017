@@ -30,15 +30,20 @@
 			<h:inputText value="#{agentBean.teacher.password}" />
 			
 			<h:outputText value="Age" />
-			<h:inputText value="#{agentBean.teacher.age}" />
+			<h:inputText id="age" value="#{agentBean.teacher.age}" converterMessage="Age invalide" />
 
 			<h:outputText value="date of birth" />
-			<h:inputText value="#{agentBean.teacher.birthDate}" >
+			<h:inputText id="date" value="#{agentBean.teacher.birthDate}" converterMessage="Date invalide">
 					<f:convertDateTime pattern="dd-MM-yyyy"/>
 			</h:inputText>
 			
 			<h:commandButton action="#{agentBean.ajouterTeacherEtCourse()}" value="Ajouter enseignant et cours" />
 		</h:panelGrid>
+		<h:message for="date" style="color:red" />
+		<br/>
+		<h:message for="age" style="color:red" />
+		
 		</h:form>
+		
 	</ui:define>
 </ui:composition>
